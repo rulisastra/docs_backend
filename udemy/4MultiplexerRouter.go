@@ -10,7 +10,8 @@ func mulai(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Selamat! karena sudah memulai hal-hal kecil!")
 }
 
-func main() {
+// main
+func print() {
 
 	// define routes, post, put, dll
 	http.HandleFunc("/mulai", mulai)
