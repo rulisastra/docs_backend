@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"net/http"
 )
@@ -13,7 +12,7 @@ gunain postman kuy
 
 type Customer struct {
 	// tambahin json format kalo mau change the key in json response. ngga juga boleh
-	Name string `json:"full_name"`
+	Name string `json:"full_name" xml:"name"`
 	City string
 }
 
@@ -32,12 +31,13 @@ func getAllCustomer(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
+	// liat di log
+	log.Println(`Starting server at http://localhost:8082`)
+
 	// define routes, post, put, dll
 	http.HandleFunc("/customers", getAllCustomer)
 
 	// starting server
 	log.Fatal(http.ListenAndServe("localhost:8082", nil))
 
-	// liat di log
-	fmt.Println("Starting server at http://localhost:8082")
 }
