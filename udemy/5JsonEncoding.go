@@ -23,7 +23,7 @@ func getAllCustomer(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// tambain ini kalo mau, ADD -> see the diffenrence
-	w.Header().Add("Content-Tpye", "application/json")
+	w.Header().Add("Content-Type", "application/json")
 	// ngga juga outputnya keluar "text/plain; charset=utf-8" di header postman
 
 	json.NewEncoder(w).Encode(customers) // same with fprint

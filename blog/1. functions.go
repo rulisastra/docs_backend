@@ -1,4 +1,4 @@
-package excercises
+package main
 
 import "fmt"
 
