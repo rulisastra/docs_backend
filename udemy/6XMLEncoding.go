@@ -42,3 +42,5 @@ func main() {
 	log.Fatal(http.ListenAndServe("localhost:8082", nil))
 
 }
+
+// documentation https://go.postman.co/workspace/89193e5e-b10b-4828-80fe-a4e7ba48d081/request/d401ea86-ad21-43f1-b353-f2aa68689b7d?comment=566219&ctx=comments
