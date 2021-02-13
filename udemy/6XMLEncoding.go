@@ -8,7 +8,7 @@ import (
 )
 
 /*
-gunain postman kuy
+documentation https://go.postman.co/workspace/89193e5e-b10b-4828-80fe-a4e7ba48d081/request/d401ea86-ad21-43f1-b353-f2aa68689b7d?comment=566219&ctx=comments
 */
 
 type Customer struct {
@@ -16,7 +16,7 @@ type Customer struct {
 	City string
 }
 
-func getAllCustomer(w http.ResponseWriter, r *http.Request) {
+func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	customers := []Customer{
 		{"Ruli Sastra", "Palembang"},
 		{"Kasmini", "Bone"},
@@ -37,10 +37,8 @@ func main() {
 
 	log.Println(`Starting server at http://localhost:8082`)
 
-	http.HandleFunc("/customers", getAllCustomer)
+	http.HandleFunc("/customers", getAllCustomers)
 
-	log.Fatal(http.ListenAndServe("localhost:8082", nil))
+	log.Fatal(http.ListenAndServe("localhost:8082", nil)) // addr (path) dan handler (nil)
 
 }
-
-// documentation https://go.postman.co/workspace/89193e5e-b10b-4828-80fe-a4e7ba48d081/request/d401ea86-ad21-43f1-b353-f2aa68689b7d?comment=566219&ctx=comments

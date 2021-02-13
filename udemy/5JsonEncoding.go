@@ -16,13 +16,13 @@ type Customer struct {
 	City string
 }
 
-func getAllCustomer(w http.ResponseWriter, r *http.Request) {
+func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	customers := []Customer{
-		{"Ruli Sastra", "Palembang"}, // it should've been automatically, so we just need to input value. hmmm
-		{"Kasmini", "Bone"},          // tapi ternyata 200 begini (tanpa deklarasi nama lagi)
+		{"Ruli Sastra", "Palembang"},
+		{"Kasmini", "Bone"}, // tapi ternyata 200 begini (tanpa deklarasi nama lagi)
 	}
 
-	// tambain ini kalo mau, ADD -> see the diffenrence
+	// tambain ini kalo mau, ADD -> see the difference
 	w.Header().Add("Content-Type", "application/json")
 	// ngga juga outputnya keluar "text/plain; charset=utf-8" di header postman
 
@@ -35,7 +35,7 @@ func main() {
 	log.Println(`Starting server at http://localhost:8082`)
 
 	// define routes, post, put, dll
-	http.HandleFunc("/customers", getAllCustomer)
+	http.HandleFunc("/customers", getAllCustomers)
 
 	// starting server
 	log.Fatal(http.ListenAndServe("localhost:8082", nil))
