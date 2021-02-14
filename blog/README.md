@@ -2,7 +2,7 @@
 
 <details>
 <summary>"Klik disini untuk melihat blog tree"</summary>
-
+```
 dasarpemrogramangolang-example
  ┣ .git
  ┃ ┣ hooks
@@ -728,12 +728,13 @@ dasarpemrogramangolang-example
  ┃ ┣ connection.go
  ┃ ┣ go.mod
  ┃ ┣ go.sum
- ┃ ┣ index.html
+ ┃ ┣ index.htmlS
  ┃ ┣ main.go
  ┃ ┣ server.crt
  ┃ ┗ server.key
- ┣ .gitignore
+ ┣ .gitignoreS
  ┣ LICENSE
  ┗ README.md
+```
 
  </details>

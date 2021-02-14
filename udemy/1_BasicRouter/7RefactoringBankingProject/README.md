@@ -13,6 +13,7 @@
 ### 7. refactoring
 > fixing the clutter dan diubah ke file `tree`
 
+```
 📦7RefactoringBankingProject
  ┣ 📂app
  ┃ ┣ 📜app.go
@@ -21,6 +22,7 @@
  ┣ 📜go.mod
  ┣ 📜main.go
  ┗ 📜README.md
+ ```
 
 > folder **app** berisi seluruh `logic`
 > **handlers** berisi seluruh `fungsi` yang bertugas menyerahkan tugas dari DATABASE -> MAIN
