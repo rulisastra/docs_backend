@@ -1,6 +1,8 @@
 package app
 
 import (
+	"2_ApplicationDevelopment/domain"
+	"2_ApplicationDevelopment/service"
 	"log"
 	"net/http"
 
@@ -11,12 +13,11 @@ func Start() {
 
 	router := mux.NewRouter()
 
-	// define routes
-	router.HandleFunc("/greet", greet).Methods(http.MethodGet)
-	router.HandleFunc("/customers", getAllCustomers).Methods(http.MethodGet)
-	router.HandleFunc("/customers", createCustomer).Methods(http.MethodPost)
+	// wiring
+	ch := CustomerHandlers{service.NewCustomerService(domain.NewCustomerRepositoryStub())}
 
-	router.HandleFunc("/customers/{customer_id:[0-9]+}", getCustomer).Methods(http.MethodGet)
+	// define routes
+	router.HandleFunc("/customers", ch.getAllCustomers).Methods(http.MethodGet)
 
 	// define routes
 	log.Println(`Starting server at http://localhost:8082`)
